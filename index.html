@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Web Belajar untuk Disleksia</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>My Hero — dipersembahkan oleh Fortuna Gank</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <!-- Welcome Card -->
+    <section class="welcome-card" aria-label="Sambutan pembuka My Hero">
+      <div class="hero-header" role="img" aria-label="Gambar header">
+        <img class="header-placeholder" src="https://picsum.photos/1200/360?blur=2&seed=45" alt="Gambar header placeholder" />
+      </div>
+
+      <div class="avatar" role="img" aria-label="Foto profil">
+        <img src="https://picsum.photos/seed/avatar/300/300" alt="Avatar pembuat (placeholder)" />
+      </div>
+
+      <div class="welcome-content">
+        <div class="welcome-title">My Hero</div>
+        <div class="welcome-sub">dipersembahkan oleh <em>Fortuna Gank</em></div>
+
+        <!-- Only Home pill (About removed) -->
+        <div class="nav-pills" role="tablist" aria-label="Navigasi utama">
+          <button class="pill home" id="welcomeHomeBtn" data-module="menu" aria-controls="menu">Home</button>
+        </div>
+
+        <div class="editorial" aria-live="polite">
+          <div class="text">
+            <p>
+              Selamat datang di My Hero — sebuah ruang lembut di mana huruf-huruf yang suka berlari di halaman dapat
+              dipelajari dengan tenang. Di sini kami mengundang anak-anak untuk bertemu huruf-huruf baru
+              tanpa takut, dengan desain yang hangat, suara yang ramah, dan ritme yang ramah pada mata.
+            </p>
+          </div>
+          <div class="media" aria-hidden="true">
+            <img src="https://picsum.photos/seed/smallthumb/180/120" alt="Ilustrasi kecil (placeholder)" />
+          </div>
+        </div>
+
+        <div class="social-row" aria-label="Sosial">
+          <a class="social" href="#" aria-label="Pinterest" title="Pinterest">P</a>
+          <a class="social" href="#" aria-label="Tumblr" title="Tumblr">t</a>
+          <a class="social" href="#" aria-label="Twitter" title="Twitter">T</a>
+          <a class="social" href="#" aria-label="Discord" title="Discord">D</a>
+        </div>
+
+        <div class="quote-card" role="region" aria-label="Kutipan pendiri">
+          <div class="quote-text" id="foundingQuote">
+            "Setiap anak berhak membaca dunia dengan caranya sendiri.
+            Kami membuat web ini agar huruf-huruf yang sering berlari dan melompat di mata anak disleksia akhirnya mau duduk manis, dikenali, dan disayangi tanpa rasa takut."
+          </div>
+          <div class="quote-actions">
+            <button id="quoteReadBtn" class="btn-quote" title="Bacakan kutipan">🔊 Bacakan Kutipan</button>
+          </div>
+        </div>
+
+        <div class="card-footer">made with ❤️</div>
+      </div>
+    </section>
+
+    <!-- MAIN MENU (now with separate buttons for Letters & Words & Settings) -->
+    <section id="menu" class="card" aria-label="Menu Utama">
+      <h2 class="menu-title">Selamat datang di My Hero</h2>
+      <div class="menu-grid" style="margin-top:12px;">
+        <button class="big-btn" data-module="letters">🔤 Belajar Huruf</button>
+        <button class="big-btn" data-module="words">🧩 Belajar Kata</button>
+        <button class="big-btn" data-module="settings">⚙️ Pengaturan</button>
+        <button id="helpReadBtnMenu" class="big-btn">📣 Baca Pilihan / Opsi</button>
+      </div>
+    </section>
+
+    <!-- Letters page (separate) -->
+    <section id="letters" class="card hidden" aria-hidden="true">
+      <div class="page-header">
+        <button class="back-btn">← Kembali</button>
+        <h2>Belajar Huruf</h2>
+      </div>
+
+      <div id="lettersArea" class="interact-area" aria-live="polite">
+        <!-- dynamic content rendered by app.js -->
+      </div>
+    </section>
+
+    <!-- Words page (separate) -->
+    <section id="words" class="card hidden" aria-hidden="true">
+      <div class="page-header">
+        <button class="back-btn">← Kembali</button>
+        <h2>Belajar Kata</h2>
+      </div>
+
+      <div id="wordsArea" class="interact-area" aria-live="polite">
+        <!-- dynamic content rendered by app.js -->
+      </div>
+    </section>
+
+    <!-- Settings page (separate) -->
+    <section id="settings" class="card hidden" aria-hidden="true">
+      <div class="page-header">
+        <button class="back-btn">← Kembali</button>
+        <h2>Pengaturan — Personalisasi untuk Disleksia</h2>
+      </div>
+
+      <div class="settings-area">
+        <label class="setting-row">
+          <span class="label">Ukuran Huruf: <strong id="fontSizeLabel">18</strong>px</span>
+          <input id="fontSize" type="range" min="14" max="48" step="1" />
+        </label>
+
+        <label class="setting-row">
+          <span class="label">Jenis Huruf:</span>
+          <select id="fontFamilySelect" aria-label="Pilih jenis huruf">
+            <option value="Georgia, serif">Georgia (serif)</option>
+            <option value="Helvetica, Arial, sans-serif">Helvetica</option>
+            <option value="Arial, sans-serif">Arial</option>
+            <option value="Verdana, Geneva, sans-serif">Verdana</option>
+            <option value="'Comic Sans MS', 'Comic Sans', cursive">Comic Sans</option>
+            <option value="OpenDyslexic, Georgia, serif">OpenDyslexic (if installed)</option>
+          </select>
+        </label>
+
+        <label class="setting-row">
+          <span class="label">Spasi Huruf (letter spacing): <strong id="letterSpacingLabel">0.28</strong>em</span>
+          <input id="letterSpacing" type="range" min="0" max="1.2" step="0.02" />
+        </label>
+
+        <label class="setting-row">
+          <span class="label">Jarak Baris (line-height): <strong id="lineHeightLabel">1.4</strong></span>
+          <input id="lineHeight" type="range" min="1.0" max="2.2" step="0.05" />
+        </label>
+
+        <div class="setting-row">
+          <span class="label">Tema Warna:</span>
+          <div class="theme-swatches" role="radiogroup" aria-label="Pilih tema warna">
+            <button class="swatch" data-theme="pastel-blue" title="Pastel Biru" aria-checked="false"></button>
+            <button class="swatch" data-theme="cream" title="Krem Lembut" aria-checked="false"></button>
+            <button class="swatch" data-theme="mint" title="Mint Hijau" aria-checked="false"></button>
+            <button class="swatch" data-theme="sunset" title="Senja Hangat" aria-checked="false"></button>
+          </div>
+        </div>
+
+        <label class="setting-row">
+          <input id="focusMode" type="checkbox" /> Mode Fokus (tampilkan satu baris)
+        </label>
+
+        <label class="setting-row">
+          <input id="animateFeedback" type="checkbox" checked /> Animasi Umpan Balik (benar/salah)
+        </label>
+
+        <!-- OpenDyslexic help -->
+        <div class="muted-note">
+          Jika Anda ingin menggunakan font OpenDyslexic: tempatkan file font OpenDyslexic3-Regular.otf atau .ttf
+          di folder "fonts/" pada server yang sama. Pilih "OpenDyslexic (if installed)" pada pilihan jenis huruf.
+        </div>
+
+        <div class="preview">
+          <h3>Pratinjau</h3>
+          <div id="previewArea" class="preview-area spaced focus-line">Contoh: Apel, Sepeda, Kucing</div>
+          <div class="preview-actions">
+            <button id="previewReadBtn" class="small-btn">🔊 Bacakan Pratinjau</button>
+            <button id="saveSettings" class="small-btn primary">💾 Simpan Pengaturan</button>
+            <button id="resetSettings" class="small-btn">♻️ Reset</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-credit" role="contentinfo">
+      © Fortuna Gank — dibuat dengan cinta. My Hero.
+    </footer>
+  </div>
+
+  <!-- Confetti container -->
+  <div id="confetti-container" aria-hidden="true"></div>
+
+  <!-- App logic -->
+  <script src="app.js" defer></script>
+</body>
+</html>
+    <script  src="./script.js"></script>
+
+  </body>
+  
+</html>
